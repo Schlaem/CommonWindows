@@ -18,7 +18,7 @@
         /// <summary>
         /// Ruft die aktuelle Prozess-Nachricht ab resp. legt diese fest.
         /// </summary>
-        public string CurrentProgressMessage { get; set; }
+        public string ProgressMessage { get; set; }
 
         /// <summary>
         /// Default-Konstruktor
@@ -26,6 +26,26 @@
         public ProgressReport()
         {
             // empty...
+        }
+
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="currentProgress">Der aktuelle Fortschritt.</param>
+        /// <param name="totalProgress">Der total zu machende Fortschritt.</param>
+        public ProgressReport(int currentProgress, int totalProgress) : this(currentProgress, totalProgress, string.Empty) { }
+
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="currentProgress">Der aktuelle Fortschritt.</param>
+        /// <param name="totalProgress">Der total zu machende Fortschritt.</param>
+        /// <param name="progressMessage">Der Fortschrittsstatus.</param>
+        public ProgressReport(int currentProgress, int totalProgress, string progressMessage)
+        {
+            this.CurrentProgress = currentProgress;
+            this.TotalProgress = totalProgress;
+            this.ProgressMessage = progressMessage;
         }
     }
 }

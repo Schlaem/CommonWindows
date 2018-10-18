@@ -35,11 +35,11 @@ namespace ClT
                 i += sleepTime / 10;
                 if(i % sleepTime == 0)
                 {
-                    progress.Report(new ProgressReport() { CurrentProgress = i, TotalProgress = totalAmount, CurrentProgressMessage = string.Format("Step {0}/{1}", i / sleepTime, totalAmount / sleepTime) });
+                    progress.Report(new ProgressReport(i, totalAmount, string.Format("Step {0}/{1}", i / sleepTime, totalAmount / sleepTime)));
                 }
                 else
                 {
-                    progress.Report(new ProgressReport() { CurrentProgress = i, TotalProgress = totalAmount });
+                    progress.Report(new ProgressReport(i, totalAmount));
                 }
             }
         }
